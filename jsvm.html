@@ -1,0 +1,110 @@
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="jsvm.js"></script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div id="rom" class="well">
+      <h2>ROM</h2>
+      <div class="row">
+        <div class="col-xs-1">Address</div>
+        <div class="col-xs-1">Hex</div>
+        <div class="col-xs-1">Bin</div>
+        <div class="col-xs-1">Dec</div>
+        <div class="col-xs-8"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-4">
+        <div id="ram" class="well">
+          <h2>RAM</h2>
+          <div class="row">
+            <div class="col-xs-3">Address</div>
+            <div class="col-xs-3">Hex</div>
+            <div class="col-xs-3">Bin</div>
+            <div class="col-xs-3">Dec</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-4">
+        <div id="reg" class="well">
+          <h2>REGISTERS</h2>
+          <div class="row">
+            <div class="col-xs-3"></div>
+            <div class="col-xs-3">Hex</div>
+            <div class="col-xs-3">Bin</div>
+            <div class="col-xs-3">Dec</div>
+          </div>
+        </div>
+        <div class="well">
+          <h2>I/O</h2>
+          <div class="row">
+            <div class="col-xs-3"></div>
+            <div class="col-xs-3">Hex</div>
+            <div class="col-xs-3">Bin</div>
+            <div class="col-xs-3">Dec</div>
+          </div>
+          <div class="row" id="outRow">
+            <div class="col-xs-3">I/O out</div>
+            <div class="col-xs-3"><text id="outHex"></text></div>
+            <div class="col-xs-3"><text id="outBin"></text></div>
+            <div class="col-xs-3"><text id="outDec"></text></div>
+          </div>
+          <div class="row" id="inRow">
+            <div class="col-xs-3">I/O in</div>
+            <div class="col-xs-3"><text id="inHex"></text></div>
+            <div class="col-xs-3"><text id="inBin"></text></div>
+            <div class="col-xs-3"><text id="inDec"></text></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-4">
+        <div class="well">
+          <h2>Clock</h2>
+          <div class="row">
+            <div class="col-xs-4">
+              <text>TotalCycles:</text>
+            </div>
+            <div class="col-xs-8">
+              <text id="totalCycles">0</text>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-4">
+              <text>ProgramCounter:</text>
+            </div>
+            <div class="col-xs-1">
+              <text id="programCounter">0</text>
+            </div>
+            <div class="col-xs-7">
+              Hex:<text id="programCounterHex">0</text>
+            </div>
+          </div>
+            <div class="row">
+              <div class="col-xs-12">
+                <button id="runInstruction">Run Single Instruction</button>
+                <button id="runMoreInstruction">Run More Instructions</button>
+              </div>
+            </div>
+          </div
+        </div>
+        <div class="well">
+          <h3>Info</h3>
+          <p style="background-color:#fcaeae;">The next instruction to be executed.</p>
+          <p style="background-color:#9bb1ff;">Resources that would be accessed.</p>
+          <a href="#" id="opcodesPopover" data-toggle="popover" title="Opcodes" data-placement="top" data-content="">Opcodes</a>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
