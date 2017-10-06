@@ -62,11 +62,11 @@ function getDesc(i) {
       break;
     //PUSHIO
     case 8:
-      string = "Pushes data from RAM adress " + decToHex(data) + " and places it in the output pins (regiser)."
+      string = "Pushes data from RAM adress " + decToHex(data) + " and places it in the output pins (registery)."
       break;
     //PULLIO
     case 9:
-      string = "Pulls data from the input pins (regiser) and places it at RAM adress " + decToHex(data) + "."
+      string = "Pulls data from the input pins (registery) and places it at RAM adress " + decToHex(data) + "."
       break;
     case 10:
 
