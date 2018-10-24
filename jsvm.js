@@ -8,6 +8,7 @@ var programCounter = 0;
 var lastProgramCounter = 0;
 var totalCycles = 0;
 var highLighed = [];
+var runInterval;
 
 function getRomSize() {
   return 16;
@@ -276,6 +277,9 @@ function runInstruction() {
 }
 
 $(document).ready(function() {
+  if (localStorage.hideMessage === "True")
+    $("#message").remove();
+    
   for (var i = 0; i < getRomSize();i++) {
     $("#rom").append(
       "<div id='romRow"+i+"' style='' class='row'> " +
@@ -338,14 +342,31 @@ $(document).ready(function() {
     );
   }
 
+  $("#hideMessage").click(function() {
+    $("#message").remove();
+  });
+  
+  $("#alwaysHideMessage").click(function() {
+    localStorage.hideMessage = "True";
+    $("#message").remove();
+  });
+  
   $("#runInstruction").click(function() {
     runInstruction();
   });
 
   $("#runMoreInstruction").click(function() {
-    setInterval(function() {
+    runInterval = setInterval(function() {
       runInstruction();
     }, 500)
+  });
+  
+  $("#pauseProgram").click(function() {
+    clearInterval(runInterval);
+  });
+  
+  $("#resetProgram").click(function() {
+    location.reload();
   });
 
   var popover = "";
